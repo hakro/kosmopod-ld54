@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbsqj8ct5vuuk"]
+[gd_scene load_steps=9 format=3 uid="uid://bbsqj8ct5vuuk"]
 
 [ext_resource type="MeshLibrary" uid="uid://ta7mg8f8gyg0" path="res://tiles.tres" id="1_q7jyq"]
 [ext_resource type="Script" path="res://test_world.gd" id="1_w7b4v"]
 [ext_resource type="PackedScene" uid="uid://c2pu2dp0hayxv" path="res://player.tscn" id="3_au5ft"]
 [ext_resource type="PackedScene" uid="uid://c0vjbg6ypd1ne" path="res://object.tscn" id="4_l4l61"]
+[ext_resource type="PackedScene" uid="uid://d1sfpa7anuag8" path="res://win_area.tscn" id="4_llxl5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i7ac0"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -20,6 +21,9 @@ tonemap_mode = 2
 
 [node name="TestWorld" type="Node3D"]
 script = ExtResource("1_w7b4v")
+
+[node name="WinArea" parent="." instance=ExtResource("4_llxl5")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.5, 0, -5.5)
 
 [node name="DebugLabel" type="Label" parent="."]
 offset_left = 10.0

@@ -25,6 +25,14 @@ collide_with_bodies = false
 debug_shape_custom_color = Color(0.215686, 0.0235294, 0.4, 1)
 debug_shape_thickness = 5
 
+[node name="WinRayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, -2, 0)
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false
+debug_shape_custom_color = Color(0.623529, 0.286275, 0.490196, 1)
+debug_shape_thickness = 5
+
 [node name="NoseMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, 0.3, 0, -0.3, -1.31134e-08, 0, 0.405, -0.605)
 mesh = SubResource("PrismMesh_616yc")
