@@ -10,9 +10,7 @@ func _process(_delta):
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		var block_in_grid = $GridMap.local_to_map($Block1.position)
+		var block_in_grid = $GridMap.local_to_map($Object1.position)
 		#print(block_in_grid)
 		block_in_grid.z -= 1
-		$Block1.position = $GridMap.map_to_local(block_in_grid)
-		
-		#$Block1
+		$Object1.position = $GridMap.map_to_local(block_in_grid)
