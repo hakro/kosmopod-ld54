@@ -44,6 +44,6 @@ func turn(angle : float):
 	if not moving and not rotating:
 		rotating = true
 		var rot_tween : Tween = create_tween()
-		rot_tween.tween_property(self, "rotation:y", rotation.y + angle, 0.15).set_trans(Tween.TRANS_CUBIC)
+		rot_tween.tween_property(self, "rotation:y", rotation.y + angle, 0.1).set_trans(Tween.TRANS_CUBIC)
 		await rot_tween.finished
 		rotating = false

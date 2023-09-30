@@ -1,9 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3p6kry8lhfvu"]
+[gd_scene load_steps=3 format=3 uid="uid://d3p6kry8lhfvu"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xqf3s"]
 size = Vector3(1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_swjbp"]
 
 [node name="MeshLib" type="Node3D"]
 
 [node name="FloorTile" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_xqf3s")
+
+[node name="Obstacle" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+mesh = SubResource("BoxMesh_xqf3s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.447155, 0)
+shape = SubResource("BoxShape3D_swjbp")

@@ -14,7 +14,6 @@ script = ExtResource("1_dihsu")
 [node name="MoveRayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -1.5)
 collide_with_areas = true
-collide_with_bodies = false
 debug_shape_custom_color = Color(0.858824, 0.286275, 0, 1)
 debug_shape_thickness = 5
 
