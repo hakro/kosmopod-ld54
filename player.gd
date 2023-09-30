@@ -7,23 +7,23 @@ var moving : bool = false
 @onready var obj_raycast : RayCast3D = $ObjectRayCast3D
 
 func _physics_process(_delta):
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("move_forward"):
 		move(Vector3.FORWARD)
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("move_backward"):
 		move(Vector3.BACK)
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("move_left"):
 		move(Vector3.LEFT)
-	if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("move_right"):
 		move(Vector3.RIGHT)
 	
 	# Attract Objects
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("pull_object"):
 		#print(obj_raycast.get_collision_normal())
-		
-		var obj = obj_raycast.get_collider()
-		#var offset = GM.get_grid_location(position) - GM.get_grid_location(obj.position)
-		var offset = position - obj.position
-		obj.position += offset - obj_raycast.get_collision_normal()
+		if obj_raycast.is_colliding():
+			var obj = obj_raycast.get_collider()
+			var offset = position - obj.position
+			#obj.position += offset - obj_raycast.get_collision_normal()
+			obj.move_by(offset - obj_raycast.get_collision_normal())
 		
 
 func move(dir: Vector3):
