@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1sfpa7anuag8"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tldh5"]
+radius = 0.42
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nq72c"]
+
+[node name="WinArea" type="Area3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_tldh5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.1, 0, 0, 0, 0.8, 0, 0, 0)
+mesh = SubResource("CylinderMesh_nq72c")
