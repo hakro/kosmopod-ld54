@@ -2,6 +2,9 @@ extends Node3D
 
 @onready var debug_label : Label = $DebugLabel
 
+func _ready():
+	GM.gridmap = $GridMap
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	debug_label.text = "FPS: " + str(Engine.get_frames_per_second())
