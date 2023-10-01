@@ -9,9 +9,9 @@ func _ready():
 func _process(_delta):
 	debug_label.text = "FPS: " + str(Engine.get_frames_per_second())
 	debug_label.text += "\nPlayer Grid coord:" + str($GridMap.local_to_map(($Player.position)))
-	debug_label.text += "\nPlayer Rot:" + str($Player.rotation.y)
-	debug_label.text += "\nForward:" + str(Vector3.FORWARD)
-	debug_label.text += "\nRotated:" + str(Vector3.FORWARD.rotated(Vector3.UP, PI))
+	#debug_label.text += "\nPlayer Rot:" + str($Player.rotation.y)
+	#debug_label.text += "\nForward:" + str(Vector3.FORWARD)
+	#debug_label.text += "\nRotated:" + str(Vector3.FORWARD.rotated(Vector3.UP, PI))
 
 #func _input(event):
 	#if event.is_action_pressed("ui_cancel"):

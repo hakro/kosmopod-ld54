@@ -37,7 +37,7 @@ text = "Text"
 environment = SubResource("Environment_mtb07")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(0.500001, -0.75, 0.433012, -9.8387e-09, 0.5, 0.866025, -0.866025, -0.433013, 0.25, 0, 3, 0)
 shadow_enabled = true
 
 [node name="GridMap" type="GridMap" parent="."]
@@ -53,6 +53,7 @@ transform = Transform3D(0.506546, -0.483104, 0.714159, 1.49012e-08, 0.828285, 0.
 visible = false
 projection = 1
 size = 10.0
+far = 90.0
 
 [node name="Player" parent="." instance=ExtResource("3_au5ft")]
 
