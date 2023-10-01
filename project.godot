@@ -11,13 +11,19 @@ config_version=5
 [application]
 
 config/name="KosmoPod"
-run/main_scene="res://test_world.tscn"
+run/main_scene="res://levels/base_level.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GM="*res://GameManager.gd"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=480
+window/vsync/vsync_mode=2
 
 [input]
 
@@ -58,6 +64,6 @@ turn_right={
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-anti_aliasing/quality/msaa_3d=2
+anti_aliasing/quality/msaa_3d=1

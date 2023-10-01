@@ -16,6 +16,8 @@
 [node name="Object" type="Area3D" groups=["movable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -0.5)
 collision_layer = 3
+monitoring = false
+monitorable = false
 script = ExtResource("1_ce4dr")
 metadata/_edit_group_ = true
 

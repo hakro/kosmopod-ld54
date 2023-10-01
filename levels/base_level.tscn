@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bbsqj8ct5vuuk"]
 
-[ext_resource type="Script" path="res://levels/test_world.gd" id="1_w7b4v"]
+[ext_resource type="Script" path="res://levels/base_level.gd" id="1_fg8n8"]
 [ext_resource type="PackedScene" uid="uid://c2pu2dp0hayxv" path="res://player.tscn" id="3_au5ft"]
 [ext_resource type="MeshLibrary" uid="uid://plpor7trddqw" path="res://mesh_lib.tres" id="3_uftpn"]
 [ext_resource type="PackedScene" uid="uid://d1sfpa7anuag8" path="res://win_area.tscn" id="4_llxl5"]
@@ -15,18 +15,23 @@ sky_material = SubResource("ProceduralSkyMaterial_i7ac0")
 
 [sub_resource type="Environment" id="Environment_mtb07"]
 background_mode = 1
-background_color = Color(0.129412, 0.0117647, 0.270588, 1)
+background_color = Color(0.00784314, 0.0156863, 0.101961, 1)
 sky = SubResource("Sky_eiqet")
+ambient_light_source = 2
+ambient_light_color = Color(0.239216, 0.0823529, 0.443137, 1)
+reflected_light_source = 2
 tonemap_mode = 1
+glow_bloom = 0.1
+glow_blend_mode = 3
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6erw3"]
-size = Vector3(7, 2.25, 1)
+size = Vector3(6.75, 2.25, 1)
 
 [node name="BaseLevel" type="Node3D"]
-script = ExtResource("1_w7b4v")
+script = ExtResource("1_fg8n8")
 
 [node name="WinArea" parent="." instance=ExtResource("4_llxl5")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.5, 0, -6.5)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.5, 0.119385, -6.5)
 
 [node name="DebugLabel" type="Label" parent="."]
 offset_left = 10.0
