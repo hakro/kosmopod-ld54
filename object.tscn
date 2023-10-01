@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0vjbg6ypd1ne"]
+[gd_scene load_steps=10 format=3 uid="uid://c0vjbg6ypd1ne"]
 
 [ext_resource type="Script" path="res://object.gd" id="1_ce4dr"]
+[ext_resource type="ArrayMesh" uid="uid://e1fx3nmq71nu" path="res://assets/chair.res" id="2_wk1om"]
+[ext_resource type="ArrayMesh" uid="uid://bbs6tfm54gowe" path="res://assets/table.res" id="3_0jib0"]
+[ext_resource type="ArrayMesh" uid="uid://bkp7iicdmfptp" path="res://assets/computer.res" id="4_v0521"]
+[ext_resource type="ArrayMesh" uid="uid://cm6vrtk00ktj6" path="res://assets/plant.res" id="5_ntrax"]
+[ext_resource type="ArrayMesh" uid="uid://bqrw62fjodfkt" path="res://assets/fridge.res" id="6_53ms8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qdx0w"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_bwqia"]
+[sub_resource type="BoxMesh" id="BoxMesh_8nu2e"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_0av4i"]
 
 [node name="Object" type="Area3D" groups=["movable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -0.5)
@@ -15,10 +22,6 @@ metadata/_edit_group_ = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_qdx0w")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, 0, 0)
-mesh = SubResource("BoxMesh_bwqia")
-
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, 0, 0)
 target_position = Vector3(0, 0, -40)
@@ -26,3 +29,35 @@ collision_mask = 12
 collide_with_areas = true
 debug_shape_custom_color = Color(0.627451, 0, 0, 1)
 debug_shape_thickness = 5
+
+[node name="Chair" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.2, 0, -1.81195e-07, 0, 1.2, 0, 1.81195e-07, 0, -1.2, 0, 0.0092997, 0)
+visible = false
+mesh = ExtResource("2_wk1om")
+
+[node name="Table" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0.122084, 0)
+visible = false
+mesh = ExtResource("3_0jib0")
+
+[node name="Computer" type="MeshInstance3D" parent="Table"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -0.591261, -0.724551, -0.625438)
+mesh = ExtResource("4_v0521")
+skeleton = NodePath("../..")
+
+[node name="Plant" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.2, 0, -1.81195e-07, 0, 1.2, 0, 1.81195e-07, 0, -1.2, 0, 0.635565, 0)
+visible = false
+mesh = ExtResource("5_ntrax")
+
+[node name="Fridge" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0.489188, 0)
+visible = false
+mesh = ExtResource("6_53ms8")
+
+[node name="PlaceHolder" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_8nu2e")
+
+[node name="Pointer" type="MeshInstance3D" parent="PlaceHolder"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -0.515076)
+mesh = SubResource("PrismMesh_0av4i")

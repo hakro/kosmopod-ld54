@@ -2,6 +2,11 @@ extends Area3D
 
 # Raycast to detect obstacles
 @onready var ray : RayCast3D = $RayCast3D
+@export_enum("Chair", "Table", "Fridge", "Plant") var object_mesh : String = "Chair"
+
+func _ready():
+	$PlaceHolder.hide()
+	get_node(object_mesh).show()
 
 func move_by(offset : Vector3, player_position):
 	ray.look_at(player_position)
