@@ -30,6 +30,21 @@ size = Vector3(6.75, 2.25, 1)
 [node name="BaseLevel" type="Node3D"]
 script = ExtResource("1_fg8n8")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+z_index = -5
+z_as_relative = false
+position = Vector2(397, -33)
+amount = 30
+lifetime = 15.0
+preprocess = 50.0
+emission_shape = 3
+emission_rect_extents = Vector2(500, 0)
+gravity = Vector2(0, 10)
+scale_amount_min = 0.0
+scale_amount_max = 3.0
+color = Color(0.694118, 0.462745, 0.243137, 0.431373)
+
 [node name="WinArea" parent="." instance=ExtResource("4_llxl5")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.5, 0.119385, -6.5)
 
@@ -93,6 +108,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5, 0
 shape = SubResource("BoxShape3D_6erw3")
 
 [node name="TransitionColorRect" type="ColorRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
