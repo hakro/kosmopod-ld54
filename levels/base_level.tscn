@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbsqj8ct5vuuk"]
+[gd_scene load_steps=12 format=3 uid="uid://bbsqj8ct5vuuk"]
 
 [ext_resource type="Script" path="res://levels/base_level.gd" id="1_fg8n8"]
 [ext_resource type="PackedScene" uid="uid://c2pu2dp0hayxv" path="res://player.tscn" id="3_au5ft"]
 [ext_resource type="MeshLibrary" uid="uid://plpor7trddqw" path="res://mesh_lib.tres" id="3_uftpn"]
 [ext_resource type="PackedScene" uid="uid://d1sfpa7anuag8" path="res://win_area.tscn" id="4_llxl5"]
 [ext_resource type="AudioStream" uid="uid://cwcsoh54ugnrq" path="res://assets/audio/win.wav" id="6_c6i72"]
+[ext_resource type="Texture2D" uid="uid://c34cl2qabie3x" path="res://assets/shadow.png" id="6_ubbjj"]
 [ext_resource type="ArrayMesh" uid="uid://cscvseu22df84" path="res://assets/room.res" id="7_no4ic"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i7ac0"]
@@ -129,6 +130,12 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite3D" type="Sprite3D" parent="TransitionColorRect/Label"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 3.48222, 1.11778, -7.12546)
+texture = ExtResource("6_ubbjj")
 
 [node name="WinAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_c6i72")

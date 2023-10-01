@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1sfpa7anuag8"]
+[gd_scene load_steps=7 format=3 uid="uid://d1sfpa7anuag8"]
 
 [ext_resource type="Script" path="res://win_area.gd" id="1_cvovy"]
 [ext_resource type="ArrayMesh" uid="uid://bkumvm877myjh" path="res://assets/win_area.res" id="1_iw8hm"]
+[ext_resource type="Texture2D" uid="uid://c34cl2qabie3x" path="res://assets/shadow.png" id="3_2qfad"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_tldh5"]
 radius = 0.949
@@ -38,3 +39,7 @@ emission_ring_height = 1.0
 emission_ring_radius = 0.75
 emission_ring_inner_radius = 0.0
 gravity = Vector3(0, 1, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(3.5, 0, 0, 0, -1.5299e-07, 3.5, 0, -3.5, -1.5299e-07, 0, -0.0754049, 0.015899)
+texture = ExtResource("3_2qfad")

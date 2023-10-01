@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0vjbg6ypd1ne"]
+[gd_scene load_steps=12 format=3 uid="uid://c0vjbg6ypd1ne"]
 
 [ext_resource type="Script" path="res://object.gd" id="1_ce4dr"]
 [ext_resource type="ArrayMesh" uid="uid://e1fx3nmq71nu" path="res://assets/chair.res" id="2_wk1om"]
@@ -7,6 +7,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cm6vrtk00ktj6" path="res://assets/plant.res" id="5_ntrax"]
 [ext_resource type="ArrayMesh" uid="uid://bqrw62fjodfkt" path="res://assets/fridge.res" id="6_53ms8"]
 [ext_resource type="AudioStream" uid="uid://dnqdfpenfgpjt" path="res://assets/audio/bringit.wav" id="7_k7b3o"]
+[ext_resource type="Texture2D" uid="uid://c34cl2qabie3x" path="res://assets/shadow.png" id="8_3wc34"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qdx0w"]
 
@@ -67,3 +68,7 @@ mesh = SubResource("PrismMesh_0av4i")
 
 [node name="MoveAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_k7b3o")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1.8, 0, 0, 0, -7.86805e-08, 1.8, 0, -1.8, -7.86805e-08, 0, -0.425411, -0.0421149)
+texture = ExtResource("8_3wc34")

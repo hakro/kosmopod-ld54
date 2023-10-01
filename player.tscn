@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2pu2dp0hayxv"]
+[gd_scene load_steps=9 format=3 uid="uid://c2pu2dp0hayxv"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_dihsu"]
 [ext_resource type="AudioStream" uid="uid://b7llvh02xffqv" path="res://assets/audio/move.wav" id="2_yj3v8"]
 [ext_resource type="AudioStream" uid="uid://bajxpio0gknu1" path="res://assets/audio/turn.wav" id="3_8aw0h"]
+[ext_resource type="Texture2D" uid="uid://c34cl2qabie3x" path="res://assets/shadow.png" id="4_a5tle"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uh0ok"]
 albedo_color = Color(0.0784314, 0, 0.384314, 1)
@@ -59,3 +60,7 @@ volume_db = -10.0
 
 [node name="TurnAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_8aw0h")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0, -0.819574, 0.0321305)
+texture = ExtResource("4_a5tle")
