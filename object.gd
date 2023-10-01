@@ -20,4 +20,4 @@ func move_by(offset : Vector3, player_position):
 		offset = ray.get_collision_normal() - offset2
 
 	var move_tween : Tween = create_tween()
-	move_tween.tween_property(self, "position", position + offset, 0.15).set_trans(Tween.TRANS_CUBIC)
+	move_tween.tween_property(self, "position", position + offset, 0.12).set_trans(Tween.TRANS_CUBIC)

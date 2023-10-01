@@ -26,7 +26,7 @@ shape = SubResource("BoxShape3D_qdx0w")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, 0, 0)
-target_position = Vector3(0, 0, -40)
+target_position = Vector3(0, 0, -15)
 collision_mask = 12
 collide_with_areas = true
 debug_shape_custom_color = Color(0.627451, 0, 0, 1)

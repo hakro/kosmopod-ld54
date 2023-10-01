@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbsqj8ct5vuuk"]
+[gd_scene load_steps=11 format=3 uid="uid://bbsqj8ct5vuuk"]
 
 [ext_resource type="Script" path="res://levels/base_level.gd" id="1_fg8n8"]
 [ext_resource type="PackedScene" uid="uid://c2pu2dp0hayxv" path="res://player.tscn" id="3_au5ft"]
 [ext_resource type="MeshLibrary" uid="uid://plpor7trddqw" path="res://mesh_lib.tres" id="3_uftpn"]
 [ext_resource type="PackedScene" uid="uid://d1sfpa7anuag8" path="res://win_area.tscn" id="4_llxl5"]
+[ext_resource type="PackedScene" uid="uid://dkgsw3vy5it4k" path="res://blocker.tscn" id="6_u2ygl"]
 [ext_resource type="ArrayMesh" uid="uid://cscvseu22df84" path="res://assets/room.res" id="7_no4ic"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i7ac0"]
@@ -74,6 +75,7 @@ mesh = ExtResource("7_no4ic")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Blockers"]
 collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Blockers/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.875, 0.5)
@@ -90,3 +92,6 @@ shape = SubResource("BoxShape3D_6erw3")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Blockers/StaticBody3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5, 0.95, -3.5)
 shape = SubResource("BoxShape3D_6erw3")
+
+[node name="Blocker" parent="Blockers" instance=ExtResource("6_u2ygl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 2.5)
