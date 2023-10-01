@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://mm3gowutu0cq"]
+
+[ext_resource type="Script" path="res://levels/menu.gd" id="1_21wff"]
+[ext_resource type="Texture2D" uid="uid://ds7otmgwq3sv1" path="res://assets/main_menu.png" id="1_hpdy1"]
+[ext_resource type="AudioStream" uid="uid://c13xye5fa5eoj" path="res://assets/audio/main_menu_music.ogg" id="3_bwa1a"]
+[ext_resource type="AudioStream" uid="uid://cwcsoh54ugnrq" path="res://assets/audio/win.wav" id="4_uvrxo"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_21wff")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = -27.0
+offset_right = 9.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hpdy1")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.5
+offset_top = -45.0
+offset_right = 88.5
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "PRESS SPACE TO START"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="MenuSong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bwa1a")
+volume_db = -11.848
+autoplay = true
+
+[node name="SpacePressed" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_uvrxo")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

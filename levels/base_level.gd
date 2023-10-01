@@ -14,7 +14,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	debug_label.text = ""
-	debug_label.text += "FPS: " + str(Engine.get_frames_per_second())
 	debug_label.text += "\nW: Move Forward"
 	debug_label.text += "\nA - D: Rotate"
 	debug_label.text += "\nSpaceBar: Attract Object"
@@ -34,3 +33,12 @@ func win_level():
 	await $WinAudio.finished
 	if next_scene:
 		get_tree().change_scene_to_packed(next_scene)
+	else:
+		#Game is finished
+		var color_tween : Tween = create_tween()
+		color_tween.tween_property(trans_rect, "color", Color("Black", 1.0), 1.2)
+		var label : Label = trans_rect.get_node("Label")
+		label.text = "Thank you for playing"
+		label.text += "\nThis game was made for Ludum Dare 54 : Limited Space"
+		label.text += "\nMade with Godot 4.2-dev, Blender 3.6, and LMMS 1.3 Alpha"
+		label.text += "\nSource Code (Ugly) : https://github.com/hakro/kosmopod"
