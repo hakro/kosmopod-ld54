@@ -9,6 +9,8 @@ var rotating : bool = false
 # Raycast to detect win area
 @onready var win_raycast : RayCast3D = $WinRayCast3D
 
+signal win
+
 func _physics_process(_delta):
 	if Input.is_action_pressed("move_forward"):
 		move(Vector3.FORWARD)
@@ -38,7 +40,7 @@ func move(dir: Vector3):
 		moving = false
 
 	if win_raycast.is_colliding() and win_raycast.get_collider().is_in_group("win_area"):
-		print("win")
+		emit_signal("win")
 
 func turn(angle : float):
 	if not moving and not rotating:
