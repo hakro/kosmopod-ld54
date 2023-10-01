@@ -37,7 +37,7 @@ func move(dir: Vector3):
 		await move_tween.finished
 		moving = false
 
-	if win_raycast.is_colliding():
+	if win_raycast.is_colliding() and win_raycast.get_collider().is_in_group("win_area"):
 		print("win")
 
 func turn(angle : float):

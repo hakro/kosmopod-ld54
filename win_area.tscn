@@ -5,7 +5,7 @@ radius = 0.42
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_nq72c"]
 
-[node name="WinArea" type="Area3D"]
+[node name="WinArea" type="Area3D" groups=["win_area"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

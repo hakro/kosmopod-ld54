@@ -8,7 +8,8 @@ func move_by(offset : Vector3, player_position):
 	ray.force_raycast_update()
 
 	# collistion with obstacle
-	if ray.is_colliding():
+	# This doesn't make any sense, but I'm out of time
+	if ray.is_colliding() and not ray.get_collider().is_in_group("player"):
 		var obj = ray.get_collider()
 		var offset2 = position - obj.position
 		offset = ray.get_collision_normal() - offset2
