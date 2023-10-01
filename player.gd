@@ -2,6 +2,9 @@ extends Node3D
 
 var moving : bool = false
 var rotating : bool = false
+var rng = RandomNumberGenerator.new()
+
+@onready var move_audio : AudioStreamPlayer = $MoveAudio
 # Raycast to check if player can move
 @onready var move_raycast : RayCast3D = $MoveRayCast3D
 # Raycast to get the object in front of the player
@@ -34,6 +37,9 @@ func _physics_process(_delta):
 func move(dir: Vector3):
 	if not moving and not rotating and not move_raycast.is_colliding():
 		moving = true
+		if !move_audio.playing:
+			move_audio.pitch_scale = rng.randf_range(0.95, 1.20)
+			move_audio.play()
 		var move_tween : Tween = create_tween()
 		move_tween.tween_property(self, "position", dir.rotated(Vector3.UP, rotation.y), 0.12).as_relative().set_trans(Tween.TRANS_CUBIC)
 		await move_tween.finished
@@ -44,6 +50,7 @@ func move(dir: Vector3):
 
 func turn(angle : float):
 	if not moving and not rotating:
+		$TurnAudio.play()
 		rotating = true
 		var rot_tween : Tween = create_tween()
 		rot_tween.tween_property(self, "rotation:y", rotation.y + angle, 0.07).set_trans(Tween.TRANS_CUBIC)

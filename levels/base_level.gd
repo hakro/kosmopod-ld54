@@ -30,5 +30,7 @@ func transition_to_level():
 
 func win_level():
 	player.process_mode = Node.PROCESS_MODE_DISABLED
+	$WinAudio.play()
+	await $WinAudio.finished
 	if next_scene:
 		get_tree().change_scene_to_packed(next_scene)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbsqj8ct5vuuk"]
+[gd_scene load_steps=11 format=3 uid="uid://bbsqj8ct5vuuk"]
 
 [ext_resource type="Script" path="res://levels/base_level.gd" id="1_fg8n8"]
 [ext_resource type="PackedScene" uid="uid://c2pu2dp0hayxv" path="res://player.tscn" id="3_au5ft"]
 [ext_resource type="MeshLibrary" uid="uid://plpor7trddqw" path="res://mesh_lib.tres" id="3_uftpn"]
 [ext_resource type="PackedScene" uid="uid://d1sfpa7anuag8" path="res://win_area.tscn" id="4_llxl5"]
+[ext_resource type="AudioStream" uid="uid://cwcsoh54ugnrq" path="res://assets/audio/win.wav" id="6_c6i72"]
 [ext_resource type="ArrayMesh" uid="uid://cscvseu22df84" path="res://assets/room.res" id="7_no4ic"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i7ac0"]
@@ -108,10 +109,12 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5, 0
 shape = SubResource("BoxShape3D_6erw3")
 
 [node name="TransitionColorRect" type="ColorRect" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="WinAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_c6i72")

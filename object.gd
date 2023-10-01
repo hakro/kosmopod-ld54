@@ -9,6 +9,7 @@ func _ready():
 	get_node(object_mesh).show()
 
 func move_by(offset : Vector3, player_position):
+	$MoveAudio.play()
 	ray.look_at(player_position)
 	ray.force_raycast_update()
 

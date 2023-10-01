@@ -1,10 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2pu2dp0hayxv"]
+[gd_scene load_steps=8 format=3 uid="uid://c2pu2dp0hayxv"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_dihsu"]
+[ext_resource type="AudioStream" uid="uid://b7llvh02xffqv" path="res://assets/audio/move.wav" id="2_yj3v8"]
+[ext_resource type="AudioStream" uid="uid://bajxpio0gknu1" path="res://assets/audio/turn.wav" id="3_8aw0h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uh0ok"]
+albedo_color = Color(0.0784314, 0, 0.384314, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7u4i1"]
+material = SubResource("StandardMaterial3D_uh0ok")
 
-[sub_resource type="PrismMesh" id="PrismMesh_616yc"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qkxqp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_csmxw"]
 
@@ -37,8 +43,8 @@ debug_shape_custom_color = Color(0.623529, 0.286275, 0.490196, 1)
 debug_shape_thickness = 5
 
 [node name="NoseMesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, 0.3, 0, -0.3, -1.31134e-08, 0, 0.405, -0.605)
-mesh = SubResource("PrismMesh_616yc")
+transform = Transform3D(-1.31134e-08, 0.3, 1.31134e-08, 0, -1.31134e-08, 0.3, 0.3, 1.31134e-08, 5.73205e-16, 0, 0.405, -0.468394)
+mesh = SubResource("CapsuleMesh_qkxqp")
 
 [node name="Area3D" type="Area3D" parent="." groups=["player"]]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -46,3 +52,10 @@ collision_layer = 9
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_csmxw")
+
+[node name="MoveAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_yj3v8")
+volume_db = -10.0
+
+[node name="TurnAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8aw0h")
