@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkgsw3vy5it4k"]
+[gd_scene load_steps=3 format=3 uid="uid://dkgsw3vy5it4k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bkfpv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ss2r3"]
 
 [node name="Blocker" type="StaticBody3D"]
 collision_layer = 4
@@ -9,3 +11,7 @@ input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_bkfpv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_ss2r3")

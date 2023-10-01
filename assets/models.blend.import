@@ -100,6 +100,16 @@ _subresources={
 "save_to_file/make_streamable": "",
 "save_to_file/path": "res://assets/walkable_floor_tile.res"
 },
+"models-7df4222ed0e7a3fbf3b18bd8d75a25e6_Cube_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/win_area.res"
+},
 "models-7df4222ed0e7a3fbf3b18bd8d75a25e6_Cube_010": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
