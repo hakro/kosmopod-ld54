@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://iyhfo8w3043t"]
+[gd_scene load_steps=5 format=3 uid="uid://iyhfo8w3043t"]
 
 [ext_resource type="PackedScene" uid="uid://bbsqj8ct5vuuk" path="res://levels/base_level.tscn" id="1_4406b"]
 [ext_resource type="PackedScene" uid="uid://dkgsw3vy5it4k" path="res://blocker.tscn" id="2_0b2x3"]
+[ext_resource type="PackedScene" uid="uid://bwwmdbj1gaph3" path="res://levels/level_2.tscn" id="2_k3voe"]
 [ext_resource type="PackedScene" uid="uid://c0vjbg6ypd1ne" path="res://object.tscn" id="3_2dawf"]
 
 [node name="Level1" instance=ExtResource("1_4406b")]
+next_scene = ExtResource("2_k3voe")
 
 [node name="GridMap" parent="." index="4"]
 data = {
