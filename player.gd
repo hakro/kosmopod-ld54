@@ -27,7 +27,7 @@ func _physics_process(_delta):
 			if obj.is_in_group("movable"):
 				var offset = position - obj.position
 				#obj.position += offset - obj_raycast.get_collision_normal()
-				obj.move_by(offset - obj_raycast.get_collision_normal())
+				obj.move_by(offset - obj_raycast.get_collision_normal(), position)
 
 func move(dir: Vector3):
 	if not moving and not rotating and not move_raycast.is_colliding():

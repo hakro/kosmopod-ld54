@@ -13,9 +13,9 @@ func _process(_delta):
 	debug_label.text += "\nForward:" + str(Vector3.FORWARD)
 	debug_label.text += "\nRotated:" + str(Vector3.FORWARD.rotated(Vector3.UP, PI))
 
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		var block_in_grid = $GridMap.local_to_map($Object1.position)
-		#print(block_in_grid)
-		block_in_grid.z -= 1
-		$Object1.position = $GridMap.map_to_local(block_in_grid)
+#func _input(event):
+	#if event.is_action_pressed("ui_cancel"):
+		#var block_in_grid = $GridMap.local_to_map($Object1.position)
+		##print(block_in_grid)
+		#block_in_grid.z -= 1
+		#$Object1.position = $GridMap.map_to_local(block_in_grid)
