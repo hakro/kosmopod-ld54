@@ -50,6 +50,26 @@ _subresources={
 "save_to_file/make_streamable": "",
 "save_to_file/path": "res://assets/chair.res"
 },
+"models-7df4222ed0e7a3fbf3b18bd8d75a25e6_Cube_003": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/unwalkable_floor_tile.res"
+},
+"models-7df4222ed0e7a3fbf3b18bd8d75a25e6_Cube_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/room.res"
+},
 "models-7df4222ed0e7a3fbf3b18bd8d75a25e6_Cube_005": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -70,6 +90,16 @@ _subresources={
 "save_to_file/make_streamable": "",
 "save_to_file/path": "res://assets/computer.res"
 },
+"models-7df4222ed0e7a3fbf3b18bd8d75a25e6_Cube_007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://assets/walkable_floor_tile.res"
+},
 "models-7df4222ed0e7a3fbf3b18bd8d75a25e6_Cube_010": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -87,7 +117,7 @@ blender/nodes/visible=0
 blender/nodes/punctual_lights=true
 blender/nodes/cameras=true
 blender/nodes/custom_properties=true
-blender/nodes/modifiers=1
+blender/nodes/modifiers=0
 blender/meshes/colors=false
 blender/meshes/uvs=true
 blender/meshes/normals=true

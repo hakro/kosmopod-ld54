@@ -1,22 +1,41 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3p6kry8lhfvu"]
+[gd_scene load_steps=5 format=3 uid="uid://chx5pq1h3kfq0"]
+
+[ext_resource type="ArrayMesh" uid="uid://dy3sk4sqynvha" path="res://assets/unwalkable_floor_tile.res" id="1_edlyc"]
+[ext_resource type="ArrayMesh" uid="uid://gduum7ihap36" path="res://assets/walkable_floor_tile.res" id="2_uh7w5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xqf3s"]
 size = Vector3(1, 0.1, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_swjbp"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_cdewk"]
 
 [node name="MeshLib" type="Node3D"]
 
-[node name="FloorTile" type="MeshInstance3D" parent="."]
+[node name="FloorTileWhite" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_xqf3s")
 
-[node name="Obstacle" type="MeshInstance3D" parent="."]
+[node name="ObstacleWhite" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 mesh = SubResource("BoxMesh_xqf3s")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Obstacle"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ObstacleWhite"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ObstacleWhite/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.447155, 0)
-shape = SubResource("BoxShape3D_swjbp")
+shape = SubResource("BoxShape3D_cdewk")
+
+[node name="UnwalkableFloorTile" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.99612)
+visible = false
+mesh = ExtResource("1_edlyc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="UnwalkableFloorTile"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="UnwalkableFloorTile/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.447155, 0)
+shape = SubResource("BoxShape3D_cdewk")
+
+[node name="WalkableFloorTile" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.22369, 0, 0, 0, 1, 0, 0.0109577, -2.051)
+mesh = ExtResource("2_uh7w5")
